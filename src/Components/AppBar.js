@@ -39,9 +39,9 @@ function AppBar() {
               marginRight: '16px', // Increase margin for spacing
             }} 
           />
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          {/* <Typography variant="h6" sx={{ flexGrow: 1 }}>
             MyApp
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* Logout Button */}

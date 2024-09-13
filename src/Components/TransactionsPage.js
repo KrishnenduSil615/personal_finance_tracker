@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Box,
   Typography,
@@ -20,9 +21,12 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { addExpense } from '../Store/Features/Expenses/ExpensesSlice';
 
 const TransactionsPage = () => {
-  const [transactions, setTransactions] = useState([]);
+  const dispatch = useDispatch();
+  const transactions = useSelector(state => state.expenses);
+  // const [transactions, setTransactions] = useState([]);
   const [newTransaction, setNewTransaction] = useState({
     date: '',
     amount: '',
@@ -34,7 +38,7 @@ const TransactionsPage = () => {
     // Simulate data fetching
     setTimeout(() => {
       setLoading(false);
-      // Optionally set some initial transactions
+      // Optionally set somea initial transactions
     }, 2000);
   }, []);
 
@@ -45,16 +49,21 @@ const TransactionsPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addExpense(newTransaction)) 
+
+
     if (!newTransaction.date || !newTransaction.amount || !newTransaction.category) {
       alert('All fields are required');
       return;
     }
-
     // Add the new transaction
-    setTransactions([...transactions, { ...newTransaction, amount: Number(newTransaction.amount) }]);
+    
+
 
     // Clear the form
     setNewTransaction({ date: '', amount: '', category: '' });
+
+
   };
 
   return (

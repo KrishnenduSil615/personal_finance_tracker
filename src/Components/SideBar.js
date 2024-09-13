@@ -26,7 +26,7 @@ function SideBar() {
                     boxSizing: 'border-box',
                     backgroundColor: '#c9b5eb', // Updated to match the style of the DashBoard cards
                     borderRight: '1px solid #ddd',
-                    marginTop: '64px', // Adjust to match AppBar height
+                    marginTop: '1rem', // Adjust to match AppBar height
                     boxShadow: 3, // Adding shadow for a cohesive look with the DashBoard
                 },
             }}
