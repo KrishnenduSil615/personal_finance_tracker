@@ -38,7 +38,7 @@ export const expenseSlice = createSlice({
                 existingExpense.category = category;
             }
         }
-    }
+    } 
 })
 
 export const { addExpense, removeExpense, updateExpense } = expenseSlice.actions;
