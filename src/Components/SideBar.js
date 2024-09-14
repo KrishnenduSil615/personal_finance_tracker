@@ -5,7 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import SavingsIcon from '@mui/icons-material/Savings'; 
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 function SideBar() {
     const [selectedIndex, setSelectedIndex] = useState(null); 

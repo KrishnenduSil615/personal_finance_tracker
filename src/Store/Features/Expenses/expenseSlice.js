@@ -3,9 +3,13 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 const initialState = {
     expenses: [
         { id: 1, date: "2024-09-13", amount: "250", category: "Groceries" },
-    ]
+    ],
+    saveings: {
+        currentBlance: "5000",
+    }
 }
        
+        
 
 export const expenseSlice = createSlice({
     name: "expense",
