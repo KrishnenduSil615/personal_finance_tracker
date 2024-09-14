@@ -21,54 +21,63 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { addExpense } from '../Store/Features/Expenses/ExpensesSlice';
+import { addExpense, removeExpense, updateExpense } from '../Store/Features/Expenses/expenseSlice'; // Import the actions
 
 const TransactionsPage = () => {
-  const dispatch = useDispatch();
-  const transactions = useSelector(state => state.expenses);
-  // const [transactions, setTransactions] = useState([]);
   const [newTransaction, setNewTransaction] = useState({
     date: '',
     amount: '',
     category: '',
   });
+  const [editing, setEditing] = useState(null); // To track which transaction is being edited
   const [loading, setLoading] = useState(true);
-
+  const dispatch = useDispatch();
+  const transactions = useSelector(state => state.expenses);
+  
   useEffect(() => {
-    // Simulate data fetching
     setTimeout(() => {
       setLoading(false);
-      // Optionally set somea initial transactions
     }, 2000);
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewTransaction((prev) => ({ ...prev, [name]: value }));
+    setNewTransaction(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addExpense(newTransaction)) 
-
-
     if (!newTransaction.date || !newTransaction.amount || !newTransaction.category) {
       alert('All fields are required');
       return;
     }
-    // Add the new transaction
-    
 
+    if (editing) {
+      dispatch(updateExpense({ ...newTransaction, id: editing }));
+      setEditing(null);
+    } else {
+      dispatch(addExpense(newTransaction));
+    }
 
-    // Clear the form
     setNewTransaction({ date: '', amount: '', category: '' });
+  };
 
+  const handleEdit = (transaction) => {
+    setNewTransaction({
+      date: transaction.date,
+      amount: transaction.amount,
+      category: transaction.category,
+    });
+    setEditing(transaction.id); // Set the ID of the transaction being edited
+  };
 
+  const handleDelete = (id) => {
+    dispatch(removeExpense(id));
   };
 
   return (
     <Box sx={{ p: 3, backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
-      <Paper elevation={3} sx={{ p: 4, mb: 4, borderRadius: 3, background: 'linear-gradient(145deg, #f3e7e9, #e3edf7)',}}>
+      <Paper elevation={3} sx={{ p: 4, mb: 4, borderRadius: 3, background: 'linear-gradient(145deg, #f3e7e9, #e3edf7)' }}>
         <Typography
           variant="h4"
           gutterBottom
@@ -83,8 +92,8 @@ const TransactionsPage = () => {
           Manage Transactions
         </Typography>
 
-        <form onSubmit={handleSubmit} >
-          <Grid container spacing={3} >
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <TextField
                 fullWidth
@@ -186,7 +195,7 @@ const TransactionsPage = () => {
                   fontSize: '1rem',
                 }}
               >
-                Add Transaction
+                {editing ? 'Update Transaction' : 'Add Transaction'}
               </Button>
             </Grid>
           </Grid>
@@ -253,6 +262,7 @@ const TransactionsPage = () => {
                     '&:hover': { color: '#5e35b1' },
                     transition: 'color 0.3s ease',
                   }}
+                  onClick={() => handleEdit(transaction)}
                 >
                   <EditIcon />
                 </IconButton>
@@ -263,6 +273,7 @@ const TransactionsPage = () => {
                     '&:hover': { color: '#d32f2f' },
                     transition: 'color 0.3s ease',
                   }}
+                  onClick={() => handleDelete(transaction.id)}
                 >
                   <DeleteIcon />
                 </IconButton>

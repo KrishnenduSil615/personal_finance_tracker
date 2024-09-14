@@ -107,14 +107,14 @@ const Register = () => {
                 }}
             >
                 <Paper
-                    elevation={4} // Controls the shadow depth
+                    elevation={4}
                     sx={{
                         padding: 4,
                         width: '100%',
                         maxWidth: 500,
                         borderRadius: 8,
-                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.4)', // Custom shadow
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Optional: adds a slight white background to the form
+                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.4)', 
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)', 
                         backgroundImage: `url(${RegbackGroundImg})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'left',
@@ -127,12 +127,12 @@ const Register = () => {
                         align="center"
                         sx={{
                             fontWeight: 'bold',
-                            color: '#333', // Text color
-                            fontSize: '3rem', // Font size
-                            letterSpacing: '0.5px', // Letter spacing
-                            textTransform: 'uppercase', // Text transformation
-                            marginBottom: 2, // Bottom margin
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' // Text shadow
+                            color: '#333', 
+                            fontSize: '3rem', 
+                            letterSpacing: '0.5px', 
+                            textTransform: 'uppercase', 
+                            marginBottom: 2, 
+                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' 
                         }}
                     >
                         Register
@@ -151,26 +151,26 @@ const Register = () => {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                     fontSize: '1.2rem',
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2', 
+                                    borderRadius: '8px', 
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold',
+                                    color: '#333', 
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f',
                                 },
                             }}
                         />
@@ -187,26 +187,26 @@ const Register = () => {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                     fontSize: '1.2rem',
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2',
+                                    borderRadius: '8px', 
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f',
                                 },
                             }}
                         />
@@ -222,26 +222,26 @@ const Register = () => {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                     fontSize: '1.2rem',
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2', 
+                                    borderRadius: '8px', 
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f', 
                                 },
                             }}
                         />
@@ -257,26 +257,26 @@ const Register = () => {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                     fontSize: '1.2rem',
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2', 
+                                    borderRadius: '8px', 
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f', 
                                 },
                             }}
                         />
@@ -299,15 +299,15 @@ const Register = () => {
                     <Typography
                         variant="body2"
                         align="center"
-                        sx={{ mt: 4, color: '#333', fontWeight: 'bold' }} // Add your preferred styles here
+                        sx={{ mt: 4, color: '#333', fontWeight: 'bold' }} 
                     >
                         Back to login page{' '}
                         <MuiLink
                             component={Link}
                             to="/"
-                            underline="hover" // Style for underline, can be 'none' or 'always'
-                            color="primary" // Adjust color according to theme
-                            sx={{ fontWeight: 'bold' }} // Additional styling
+                            underline="hover" 
+                            color="primary" 
+                            sx={{ fontWeight: 'bold' }} 
                         >
                             Login
                         </MuiLink>

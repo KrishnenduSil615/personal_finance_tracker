@@ -1,12 +1,12 @@
 import React from 'react';
-import { AppBar as MuiAppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { AppBar as MuiAppBar, Toolbar,  Button, Box } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
-import logo from '../img/Screenshot_2024-09-13_000422-removebg-preview.png'; // Assume you have a logo.svg in your project
-import { useNavigate, Link } from 'react-router-dom';
+import logo from '../img/Screenshot_2024-09-13_000422-removebg-preview.png'; 
+import { useNavigate } from 'react-router-dom';
 function AppBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
-    // Handle logout logic here
+   
     navigate('/');
     console.log('User logged out');
   };
@@ -15,11 +15,11 @@ function AppBar() {
     <MuiAppBar 
       position="fixed" 
       sx={{ 
-        background: 'linear-gradient(145deg, #f3e7e9, #e3edf7)', // White background for a clean look
-        color: '#333', // Dark text color for contrast
+        background: 'linear-gradient(145deg, #f3e7e9, #e3edf7)', 
+        color: '#333', 
         zIndex: (theme) => theme.zIndex.drawer + 1, 
-        boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.2)', // Slightly more pronounced shadow
-        borderBottom: '1px solid #e0e0e0', // Lighter border color for subtle definition
+        boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.2)',
+        borderBottom: '1px solid #e0e0e0', 
       }}
     >
       <Toolbar sx={{ px: 3 }}>
@@ -35,13 +35,11 @@ function AppBar() {
             src={logo} 
             alt="Logo" 
             style={{ 
-              width: '7rem', // Adjust logo size
-              marginRight: '16px', // Increase margin for spacing
+              width: '7rem',
+              marginRight: '16px', 
             }} 
           />
-          {/* <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            MyApp
-          </Typography> */}
+         
         </Box>
 
         {/* Logout Button */}
@@ -50,13 +48,13 @@ function AppBar() {
           onClick={handleLogout}
           sx={{
             fontWeight: 'bold',
-            backgroundColor: '#007bff', // Blue background for the button
-            color: '#ffffff', // White text color for the button
-            borderRadius: 2, // Rounded corners
-            padding: '8px 16px', // Padding for better button size
+            backgroundColor: '#007bff', 
+            color: '#ffffff', 
+            borderRadius: 2, 
+            padding: '8px 16px', 
             '&:hover': {
-              backgroundColor: '#0056b3', // Darker blue on hover
-              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)', // Add shadow on hover
+              backgroundColor: '#0056b3', 
+              boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.2)', 
             },
           }}
         >

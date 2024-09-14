@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Drawer, List, ListItem, ListItemText, ListItemIcon, Toolbar, Box } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link as RouterLink } from 'react-router-dom'; 
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import SavingsIcon from '@mui/icons-material/Savings';  // Icon for Savings Goals
+import SavingsIcon from '@mui/icons-material/Savings'; 
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-// import SettingsIcon from '@mui/icons-material/Settings';
 
 const drawerWidth = 240;
 
 function SideBar() {
-    const [selectedIndex, setSelectedIndex] = useState(null); // State to keep track of selected item
+    const [selectedIndex, setSelectedIndex] = useState(null); 
 
     const handleItemClick = (index) => {
-        setSelectedIndex(index); // Set the selected index on item click
+        setSelectedIndex(index);
     };
 
     return (
@@ -24,10 +23,10 @@ function SideBar() {
                 '& .MuiDrawer-paper': {
                     width: drawerWidth,
                     boxSizing: 'border-box',
-                    backgroundColor: '#c9b5eb', // Updated to match the style of the DashBoard cards
+                    backgroundColor: '#c9b5eb', 
                     borderRight: '1px solid #ddd',
-                    marginTop: '1rem', // Adjust to match AppBar height
-                    boxShadow: 3, // Adding shadow for a cohesive look with the DashBoard
+                    marginTop: '1rem', 
+                    boxShadow: 3, 
                 },
             }}
         >
@@ -44,21 +43,21 @@ function SideBar() {
                         to="/db"
                         component={RouterLink}
                         key="Dashboard"
-                        onClick={() => handleItemClick(0)} // Update selected index
+                        onClick={() => handleItemClick(0)} 
                         sx={{
-                            backgroundColor: selectedIndex === 0 ? '#bbdefb' : '#e3f2fd', // Conditional background color
+                            backgroundColor: selectedIndex === 0 ? '#bbdefb' : '#e3f2fd', 
                             '&:hover': {
-                                backgroundColor: selectedIndex === 0 ? '#bbdefb' : '#bbdefb', // Same color on hover if selected
+                                backgroundColor: selectedIndex === 0 ? '#bbdefb' : '#bbdefb', 
                             },
-                            marginBottom: '8px', // Space between items
-                            borderRadius: '8px', // Rounded corners
-                            transition: 'background-color 0.3s, transform 0.2s', // Smooth transition for background color and transform
-                            transform: selectedIndex === 0 ? 'scale(1.02)' : 'scale(1)', // Scale effect for selected item
-                            border: selectedIndex === 0 ? '2px solid #1565c0' : 'none', // Highlight border for selected item
+                            marginBottom: '8px',
+                            borderRadius: '8px', 
+                            transition: 'background-color 0.3s, transform 0.2s',
+                            transform: selectedIndex === 0 ? 'scale(1.02)' : 'scale(1)', 
+                            border: selectedIndex === 0 ? '2px solid #1565c0' : 'none', 
                         }}
                     >
                         <ListItemIcon>
-                            <DashboardIcon sx={{ color: selectedIndex === 0 ? '#0d47a1' : '#1565c0', transition: 'color 0.3s' }} /> {/* Conditional icon color with transition */}
+                            <DashboardIcon sx={{ color: selectedIndex === 0 ? '#0d47a1' : '#1565c0', transition: 'color 0.3s' }} /> 
                         </ListItemIcon>
                         <ListItemText
                             primary="Dashboard"
@@ -76,21 +75,21 @@ function SideBar() {
                         to="/sg"
                         component={RouterLink}
                         key="Savings Goals"
-                        onClick={() => handleItemClick(1)} // Update selected index
+                        onClick={() => handleItemClick(1)} 
                         sx={{
-                            backgroundColor: selectedIndex === 1 ? '#c8e6c9' : '#e8f5e9', // Conditional background color
+                            backgroundColor: selectedIndex === 1 ? '#c8e6c9' : '#e8f5e9',
                             '&:hover': {
-                                backgroundColor: selectedIndex === 1 ? '#c8e6c9' : '#c8e6c9', // Same color on hover if selected
+                                backgroundColor: selectedIndex === 1 ? '#c8e6c9' : '#c8e6c9', 
                             },
-                            marginBottom: '8px', // Space between items
-                            borderRadius: '8px', // Rounded corners
-                            transition: 'background-color 0.3s, transform 0.2s', // Smooth transition for background color and transform
-                            transform: selectedIndex === 1 ? 'scale(1.02)' : 'scale(1)', // Scale effect for selected item
-                            border: selectedIndex === 1 ? '2px solid #2e7d32' : 'none', // Highlight border for selected item
+                            marginBottom: '8px', 
+                            borderRadius: '8px', 
+                            transition: 'background-color 0.3s, transform 0.2s', 
+                            transform: selectedIndex === 1 ? 'scale(1.02)' : 'scale(1)', 
+                            border: selectedIndex === 1 ? '2px solid #2e7d32' : 'none',
                         }}
                     >
                         <ListItemIcon>
-                            <SavingsIcon sx={{ color: selectedIndex === 1 ? '#2e7d32' : '#388e3c', transition: 'color 0.3s' }} /> {/* Conditional icon color with transition */}
+                            <SavingsIcon sx={{ color: selectedIndex === 1 ? '#2e7d32' : '#388e3c', transition: 'color 0.3s' }} /> 
                         </ListItemIcon>
                         <ListItemText
                             primary="Savings Goals"
@@ -107,25 +106,25 @@ function SideBar() {
                         button
                         to="/tp"
                         component={RouterLink}
-                        key="Transactions"
-                        onClick={() => handleItemClick(2)} // Update selected index
+                        key="Ad yourd Expenses"
+                        onClick={() => handleItemClick(2)} 
                         sx={{
-                            backgroundColor: selectedIndex === 2 ? '#ffe0b2' : '#fff3e0', // Conditional background color
+                            backgroundColor: selectedIndex === 2 ? '#ffe0b2' : '#fff3e0', 
                             '&:hover': {
-                                backgroundColor: selectedIndex === 2 ? '#ffe0b2' : '#ffe0b2', // Same color on hover if selected
+                                backgroundColor: selectedIndex === 2 ? '#ffe0b2' : '#ffe0b2', 
                             },
-                            marginBottom: '8px', // Space between items
-                            borderRadius: '8px', // Rounded corners
-                            transition: 'background-color 0.3s, transform 0.2s', // Smooth transition for background color and transform
-                            transform: selectedIndex === 2 ? 'scale(1.02)' : 'scale(1)', // Scale effect for selected item
-                            border: selectedIndex === 2 ? '2px solid #e65100' : 'none', // Highlight border for selected item
+                            marginBottom: '8px', 
+                            borderRadius: '8px', 
+                            transition: 'background-color 0.3s, transform 0.2s', 
+                            transform: selectedIndex === 2 ? 'scale(1.02)' : 'scale(1)', 
+                            border: selectedIndex === 2 ? '2px solid #e65100' : 'none', 
                         }}
                     >
                         <ListItemIcon>
-                            <AccountBalanceWalletIcon sx={{ color: selectedIndex === 2 ? '#e65100' : '#f57c00', transition: 'color 0.3s' }} /> {/* Conditional icon color with transition */}
+                            <AccountBalanceWalletIcon sx={{ color: selectedIndex === 2 ? '#e65100' : '#f57c00', transition: 'color 0.3s' }} /> 
                         </ListItemIcon>
                         <ListItemText
-                            primary="Transactions"
+                            primary="Add yourd Expenses"
                             sx={{
                                 color: selectedIndex === 2 ? '#e65100' : '#f57c00',
                                 fontWeight: selectedIndex === 2 ? 'bold' : 'normal',
@@ -134,13 +133,11 @@ function SideBar() {
                             }}
                         />
                     </ListItem>
-
                    
-
                 </List>
             </Box>
         </Drawer>
     );
 }
-
 export default SideBar;
+

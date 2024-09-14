@@ -11,6 +11,7 @@ import DashBoard from './Components/DashBoard';
 import SavingsGoals from './Components/SavingsGoals';
 import Home from './Pages/Home';
 
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -30,6 +31,7 @@ function App() {
         { path: '/db', element: <DashBoard /> },
         { path: '/sg', element: <SavingsGoals /> },
         { path: '/tp', element: <TransactionsPage /> },
+        
       ],
     },
   ]);

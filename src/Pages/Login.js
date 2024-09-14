@@ -18,7 +18,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (isLoading) return; // Prevent multiple submissions
+        if (isLoading) return; 
 
         setIsLoading(true);
         const loginData = {
@@ -46,8 +46,8 @@ function Login() {
                 {
                     method: 'POST',
                     body: JSON.stringify({
-                        email: loginData.email, // Make sure 'email' is correct
-                        password: loginData.password, // Ensure 'password' is correctly mapped
+                        email: loginData.email, 
+                        password: loginData.password, 
                         returnSecureToken: true,
                     }),
                     headers: {
@@ -68,7 +68,7 @@ function Login() {
 
             const lg_data = await response.json();
             console.log('Login successful:', lg_data);
-            navigate('/home'); // Redirect on successful login
+            navigate('/home'); 
         } catch (error) {
             console.error('Error logging in:', error);
             throw error;
@@ -97,8 +97,8 @@ function Login() {
                         width: '100%',
                         maxWidth: 500,
                         borderRadius: 8,
-                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.4)', // Custom shadow
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Optional: adds a slight white background to the form
+                        boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.4)', 
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
                         backgroundImage: `url(${RegbackGroundImgL})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'left',
@@ -113,12 +113,12 @@ function Login() {
                         align="center"
                         sx={{
                             fontWeight: 'bold',
-                            color: '#333', // Text color
-                            fontSize: '3rem', // Font size
-                            letterSpacing: '0.5px', // Letter spacing
-                            textTransform: 'uppercase', // Text transformation
-                            marginBottom: 2, // Bottom margin
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' // Text shadow
+                            color: '#333',
+                            fontSize: '3rem', 
+                            letterSpacing: '0.5px', 
+                            textTransform: 'uppercase', 
+                            marginBottom: 2, 
+                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' 
                         }}
                     >
                         Login
@@ -136,25 +136,25 @@ function Login() {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2', 
+                                    borderRadius: '8px',
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold', 
+                                    color: '#333',
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f', 
                                 },
                             }}
                         />
@@ -170,25 +170,25 @@ function Login() {
                             required
                             sx={{
                                 '& .MuiInputLabel-root': {
-                                    fontWeight: 'bold', // Style the label
-                                    color: '#333', // Label color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiOutlinedInput-root': {
-                                    borderColor: '#4a90e2', // Border color
-                                    borderRadius: '8px', // Rounded corners
+                                    borderColor: '#4a90e2', 
+                                    borderRadius: '8px',
                                     '&:hover fieldset': {
-                                        borderColor: '#1a73e8', // Border color on hover
+                                        borderColor: '#1a73e8', 
                                     },
                                     '&.Mui-focused fieldset': {
-                                        borderColor: '#1a73e8', // Border color when focused
+                                        borderColor: '#1a73e8', 
                                     },
                                 },
                                 '& .MuiInputBase-input': {
-                                    fontWeight: 'bold', // Style the input text
-                                    color: '#333', // Input text color
+                                    fontWeight: 'bold', 
+                                    color: '#333', 
                                 },
                                 '& .MuiFormHelperText-root': {
-                                    color: '#d32f2f', // Error text color
+                                    color: '#d32f2f', 
                                 },
                             }}
                         />
@@ -208,18 +208,7 @@ function Login() {
                         </Link>
                         <br />
                     </Typography>
-                    <Typography
-                        variant="body1"
-                        mt={2}
-                        align="center"
-                        underline="hover" 
-                        sx={{ color: '#333', fontWeight: 'bold' }}
-                    >
-                        Forgot Password?{' '}
-                        <Link component={RouterLink} to="/forgotPassword">
-                            Forgot Password
-                        </Link>
-                    </Typography>
+                    
                 </Paper>
             </Box>
         </Container>
